@@ -42,7 +42,83 @@
  map.add(graphicsLayer);
 
 
- // Create a polygon geometry
+ // Create a polygon geometry for arrow
+ const arrow = {
+    type: "polygon",
+    rings: [
+    [
+                2.5541865636287184,
+                49.010220033430755
+              ],
+              [
+                2.485060580568387,
+                48.999249581395816
+              ],
+              [
+                2.5014461736132887,
+                48.98643026982512
+              ],
+              [
+                2.2057371901531724,
+                48.83381225719404
+              ],
+              [
+                2.141996412204179,
+                48.83135481949171
+              ],
+              [
+                2.141293875810476,
+                48.82428154228333
+              ],
+              [
+                2.2080750732265244,
+                48.830522090419834
+              ],
+              [
+                2.159268561203703,
+                48.80151089789709
+              ],
+              [
+                2.164237883407452,
+                48.79864245106489
+              ],
+              [
+                2.2141066671738088,
+                48.829285405730474
+              ],
+              [
+                2.508590915646778,
+                48.98059130861651
+              ],
+              [
+                2.5256116608400987,
+                48.967518317707174
+              ],
+              [
+                2.5541865636287184,
+                49.010220033430755
+              ]
+    ]
+ };
+
+ const simpleFillSymbolArrow = {
+    type: "simple-fill",
+    color: [204, 102, 0, 0.8],  // brown, opacity 80%
+    outline: {
+        color: [255, 255, 255],
+        width: 1
+    }
+ };
+
+ const polygonGraphicArrow = new Graphic({
+    geometry: arrow,
+    symbol: simpleFillSymbolArrow,
+
+ });
+
+ graphicsLayer.add(polygonGraphicArrow);
+
+ // Create a polygon geometry for Hearts
  const heart1 = {
     type: "polygon",
     rings: [
@@ -169,7 +245,23 @@
     ]
  };
 
-  // Create a polygon geometry
+ const simpleFillSymbol_Heart = {
+    type: "simple-fill",
+    color: [255, 77, 166, 0.8],  // Pink, opacity 80%
+    outline: {
+        color: [0,0,0],
+        width: 1
+    }
+ };
+
+ const polygonGraphicHeart1 = new Graphic({
+    geometry: heart1,
+    symbol: simpleFillSymbol_Heart,
+
+ });
+
+ graphicsLayer.add(polygonGraphicHeart1);
+
   const heart2 = {
     type: "polygon",
     rings: [
@@ -236,7 +328,14 @@
     ]
  };
 
-  // Create a polygon geometry
+ const polygonGraphicHeart2 = new Graphic({
+    geometry: heart2,
+    symbol: simpleFillSymbol_Heart,
+
+ });
+
+ graphicsLayer.add(polygonGraphicHeart2);
+
   const heart3 = {
     type: "polygon",
     rings: [
@@ -327,80 +426,15 @@
     ]
  };
 
-  // Create a polygon geometry
-  const arrow = {
-    type: "polygon",
-    rings: [
-    [
-                2.5541865636287184,
-                49.010220033430755
-              ],
-              [
-                2.485060580568387,
-                48.999249581395816
-              ],
-              [
-                2.5014461736132887,
-                48.98643026982512
-              ],
-              [
-                2.2057371901531724,
-                48.83381225719404
-              ],
-              [
-                2.141996412204179,
-                48.83135481949171
-              ],
-              [
-                2.141293875810476,
-                48.82428154228333
-              ],
-              [
-                2.2080750732265244,
-                48.830522090419834
-              ],
-              [
-                2.159268561203703,
-                48.80151089789709
-              ],
-              [
-                2.164237883407452,
-                48.79864245106489
-              ],
-              [
-                2.2141066671738088,
-                48.829285405730474
-              ],
-              [
-                2.508590915646778,
-                48.98059130861651
-              ],
-              [
-                2.5256116608400987,
-                48.967518317707174
-              ],
-              [
-                2.5541865636287184,
-                49.010220033430755
-              ]
-    ]
- };
-
- const simpleFillSymbol = {
-    type: "simple-fill",
-    color: [227, 139, 79, 0.8],  // Orange, opacity 80%
-    outline: {
-        color: [255, 255, 255],
-        width: 1
-    }
- };
-
- const polygonGraphic = new Graphic({
-    geometry: heart1,heart2,heart3,arrow,
-    symbol: simpleFillSymbol,
+ const polygonGraphicHeart3 = new Graphic({
+    geometry: heart3,
+    symbol: simpleFillSymbol_Heart,
 
  });
- graphicsLayer.add(polygonGraphic);
+
+ graphicsLayer.add(polygonGraphicHeart3);
+
+  
 
  });
 </script>
